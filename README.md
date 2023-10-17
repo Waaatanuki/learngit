@@ -1,38 +1,18 @@
-# Chrome-Extension-Starter
+修改github当前工作流release.yml
 
-基于 [Vite](https://cn.vitejs.dev/) + [Vue3](https://v3.cn.vuejs.org/) 开发谷歌插件的启动项目。
+woff2（Google 官方工具）
+Google 提供的轻量工具，专注于 WOFF2 格式转换：
+安装（需编译，适合开发者）：
+bash
+# 克隆仓库
+git clone --recursive https://github.com/google/woff2.git
+cd woff2
 
-## 安装
+# 编译（需安装 make 和 g++）
+make
 
-```bash
-npm install
-```
-
-## 运行
-
-```bash
-npm run watch
-```
-
-## 打包
-
-```bash
-npm run build
-```
-
-## 添加扩展程序
-
-进入谷歌浏览器 `chrome://extensions/` 页面，选择“加载已解压的扩展程序”，选择该项目下 `dist` 目录。
-
-## 新页面开发
-
-可以在该项目 `src/views` 下统一管理页面，新增页面时，只需要在该目录下创建新文件即可。目录结构：
-
-```
-|- news
-|-- main.html
-|-- main.ts
-|-- main.vue
-```
-
-打包工具会自动读取 "./src/views/\*\*/main.ts" 下所有文件，并将该层目录的 main.html 作为输出的入口 HTML 文件。
+# 将工具添加到系统路径（可选）
+sudo cp woff2_compress /usr/local/bin/
+转换命令：
+bash
+# 将 asset中的ttf字体文件 转换为 woff2，并且release
