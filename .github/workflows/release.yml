@@ -22,7 +22,7 @@ jobs:
         with:
           version: 7
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install   
       - name: Build
         run: pnpm run build
       - name: Zip
@@ -33,4 +33,4 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: chrome-extension-starter v${{github.ref_name}}.zip
+          files: chrome-extension-starter_v${{github.ref_name}}.zip
