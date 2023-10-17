@@ -7,7 +7,7 @@ function bar() {
 <template>
   <div>Hello Panel!</div>
   <el-button @click="bar">
-    nihao
+    nihaoaaa
   </el-button>
 </template>
 
