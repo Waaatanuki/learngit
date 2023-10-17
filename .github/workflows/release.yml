@@ -12,9 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Test1
-        run: |
-          echo $RELEASE_VERSION
-          echo ${{github.ref_name}}
+        run:  echo ${{github}}
+      - name: Test12
+        run:  echo ${{github.ref_name}}
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
