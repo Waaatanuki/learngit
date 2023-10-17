@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Test1
-        run:  echo ${{github}}
       - name: Test12
         run:  echo ${{github.ref_name}}
       - name: Setup Node
@@ -31,8 +29,8 @@ jobs:
         run: pnpm run zip
       - name: Test
         run: ls
-    #   - name: Release
-    #     uses: softprops/action-gh-release@v1
-    #     if: startsWith(github.ref, 'refs/tags/')
-    #     with:
-    #       files: Release.txt
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: chrome-extension-starter v${{github.ref_name}}.zip
