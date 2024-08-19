@@ -25,3 +25,11 @@ jobs:
         run: pnpm install
       - name: Update1
         run: pnpm run update
+      - name: Commit and push changes
+        run: |
+          git config --local user.name "Waaatanuki"
+          git config --local user.email "watanukipublic@gmail.com"
+          git add .
+          git commit -m "chore"
+          git push
+        working-directory: asset
