@@ -28,13 +28,6 @@ jobs:
         run: pnpm install
       - name: Update1
         run: pnpm run update
-      - name: Commit and push changes
-        run: |
-          git config --local user.name "Waaatanuki"
-          git config --local user.email "watanukipublic@gmail.com"
-          git add .
-          git commit -m "chore"
-        working-directory: asset
       - name: Pushes to another repository
         uses: cpina/github-action-push-to-another-repository@main
         env:
