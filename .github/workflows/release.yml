@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: lts/*
           cache: pnpm
-      # - name: Install
-      #   run: cd ../asset
+      - name: Install
+        run: pnpm i
       - name: Update1
         run: pnpm run update
