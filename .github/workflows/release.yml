@@ -35,10 +35,14 @@ jobs:
           git add .
           git commit -m "chore"
         working-directory: asset
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
-          directory: asset
-          repository: Waaatanuki/asset
+          source-directory: asset
+          destination-github-username: Waaatanuki
+          destination-repository-name: asset
+          user-email: watanukipublic@gmail.com
+          target-branch: main
+          commit-message: action
