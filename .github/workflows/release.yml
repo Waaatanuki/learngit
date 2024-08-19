@@ -23,6 +23,8 @@ jobs:
       #     cache: pnpm
       # - name: Install
       #   run: cd ../asset
-      - name: Update
+      - name: Update1
+        run: ls
+      - name: Update2
         run: ls
         working-directory: asset
