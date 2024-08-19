@@ -10,6 +10,8 @@ export async function updateRepo() {
   const __dirname = dirname(__filename)
   const directoryPath = join(__dirname, './asset')
 
+  await exec('git config --global user.email "watanukipublic@gmail.com"', { cwd: directoryPath })
+  await exec('git config --global user.name "Waaatanuki"', { cwd: directoryPath })
   await exec('git add .', { cwd: directoryPath })
   await exec('git commit -m "chore"', { cwd: directoryPath })
   const { stdout, stderr } = await exec('git push origin main', { cwd: directoryPath })
