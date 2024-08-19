@@ -8,7 +8,7 @@ export async function updateRepo() {
 
   const __filename = fileURLToPath(import.meta.url)
   const __dirname = dirname(__filename)
-  const directoryPath = join(__dirname, '../asset')
+  const directoryPath = join(__dirname, './asset')
 
   await exec('git log', { cwd: directoryPath })
   // await exec('git add .', { cwd: directoryPath })
