@@ -29,12 +29,15 @@ jobs:
       - name: Update1
         run: pnpm run update
       - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --local user.name "Waaatanuki"
           git config --local user.email "watanukipublic@gmail.com"
           git add .
           git commit -m "chore"
-          git push
+        working-directory: asset
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
         working-directory: asset
