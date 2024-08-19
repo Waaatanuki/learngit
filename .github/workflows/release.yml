@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Waaatanuki/asset
-          path: asset
+          path: ../asset
       # - uses: pnpm/action-setup@v4
       #   with:
       #     version: latest
@@ -27,4 +27,4 @@ jobs:
         run: ls
       - name: Update2
         run: ls
-        working-directory: asset
+        working-directory: ../asset
