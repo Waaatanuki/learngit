@@ -3,28 +3,22 @@ name: Main
 on:
   push:
     tags:
-      - "*.*.*"
+      - '*.*.*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+        with:
+          repository: Waaatanuki/asset
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: lts/*
           cache: pnpm
       - name: Install
         run: pnpm install
-      - name: Build
-        run: pnpm run build
-      - name: Zip
-        run: pnpm run zip
-      - name: Test
-        run: ls
-      - name: Release
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        with:
-          files: chrome-extension-starter v${{github.ref_name}}.zip
+      - name: Update
+        run: pnpm run update
