@@ -13,8 +13,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.API_TOKEN_GITHUB }}
       - uses: actions/checkout@v4
         with:
+          token: ${{ secrets.API_TOKEN_GITHUB }}
           repository: Waaatanuki/asset
           path: asset
       - uses: pnpm/action-setup@v4
