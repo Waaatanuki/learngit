@@ -22,7 +22,7 @@ jobs:
           ref: main
           token: ${{ secrets.API_TOKEN_GITHUB }}
           repository: Waaatanuki/asset
-          path: ../asset
+          path: asset
       - uses: pnpm/action-setup@v4
         with:
           version: latest
@@ -39,7 +39,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: ../asset
+          source-directory: asset
           destination-github-username: Waaatanuki
           destination-repository-name: asset
           user-email: watanukipublic@gmail.com
