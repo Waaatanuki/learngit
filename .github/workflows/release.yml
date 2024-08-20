@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          path: learngit
           token: ${{ secrets.API_TOKEN_GITHUB }}
       - uses: actions/checkout@v4
         with:
@@ -48,5 +49,5 @@ jobs:
         with:
           commit_user_name: Waaatanuki
           commit_user_email: watanukipublic@gmail.com
-          commit_author: Waaatanuki <watanukipublic@gmail.com> # defaults to "username <username@users.noreply.github.com>",
+          commit_author: Waaatanuki <watanukipublic@gmail.com>
           commit_message: chore
