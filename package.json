@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "scripts": {
-    "update": "tsx index.ts",
+    "uplog": "tsx scripts/oss.ts",
     "up": "taze major -I"
   },
   "devDependencies": {
