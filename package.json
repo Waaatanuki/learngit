@@ -9,7 +9,9 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.26.0",
+    "@types/ali-oss": "^6.16.11",
     "@types/node": "^22.4.0",
+    "ali-oss": "^6.22.0",
     "eslint": "^9.9.0",
     "taze": "^0.16.6",
     "tsx": "^4.17.0",
