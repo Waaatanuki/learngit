@@ -5,24 +5,24 @@ permissions:
 
 on:
   push:
-    tags:
-      - '*.*.*'
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout library
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          token: ${{ secrets.API_TOKEN_GITHUB }}
-          repository: Waaatanuki/library
+      - uses: actions/checkout@v4
 
-      - name: Checkout asset
-        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          ref: main
-          token: ${{ secrets.API_TOKEN_GITHUB }}
-          repository: Waaatanuki/asset
-          path: asset
+          node-version: '20'
+
+      - name: Upload to OSS
+        env:
+          OSS_INTERNAL: true
+          OSS_ACCESSKEY_ID: ${{ secrets.OSS_ACCESSKEY_ID }}
+          OSS_ACCESSKEY_SECRET: ${{ secrets.OSS_ACCESSKEY_SECRET }}
+          OSS_BUCKET_FILE: ${{ secrets.OSS_BUCKET_FILE }}
+        run: node scripts/oss.ts
