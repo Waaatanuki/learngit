@@ -2,15 +2,15 @@
   "name": "learn-git",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.34.2",
   "scripts": {
     "uplog": "tsx scripts/oss.ts",
     "up": "taze major -I"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^7.2.0",
+    "@antfu/eslint-config": "^9.0.0",
     "@types/node": "^22.19.9",
-    "eslint": "^9.39.2",
-    "typescript": "^5.9.3"
+    "eslint": "^10.4.1",
+    "typescript": "^6.0.3"
   }
 }
